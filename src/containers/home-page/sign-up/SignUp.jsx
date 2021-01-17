@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import {  Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { userSignUp } from '../../../store/actions';
 
-import { FormControl, InputLabel, Input, FormHelperText, FormGroup, Button, Card, CardContent } from '@material-ui/core';
+import { FormControl, InputLabel, Input, OutlinedInput, FormHelperText, FormGroup, Button, Card, CardContent, Link } from '@material-ui/core';
 
 function SignUp(props) {
 
@@ -28,20 +28,20 @@ function SignUp(props) {
                     <CardContent>
                         <h2 className="text-center mb-4">Sign Up</h2>
                         <FormGroup>
-                            <FormControl>
+                            <FormControl variant="filled" fullWidth={true} className="my-2">
                                 <InputLabel htmlFor="my-input">Email address</InputLabel>
-                                <Input id="my-input" aria-describedby="my-helper-text" ref={emailRef} required />
-                                <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+                                <OutlinedInput id="my-input" aria-describedby="my-helper-text" ref={emailRef} required />
+                                {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                             </FormControl>
-                            <FormControl>
+                            <FormControl variant="filled" fullWidth={true} className="my-2">
                                 <InputLabel htmlFor="my-input">Password</InputLabel>
-                                <Input type="password" id="my-input" aria-describedby="my-helper-text" ref={passwordRef} required />
-                                <FormHelperText id="my-helper-text">Enter password of length 8.</FormHelperText>
+                                <OutlinedInput type="password" id="my-input" aria-describedby="my-helper-text" ref={passwordRef} required />
+                                {/* <FormHelperText id="my-helper-text">Enter password of length 8.</FormHelperText> */}
                             </FormControl>
-                            <FormControl>
+                            <FormControl variant="filled" fullWidth={true} className="my-2">
                                 <InputLabel htmlFor="my-input">Confirm Password</InputLabel>
-                                <Input type="password" id="my-input" aria-describedby="my-helper-text" ref={passwordConfirmRef} required />
-                                <FormHelperText id="my-helper-text">Confirm password</FormHelperText>
+                                <OutlinedInput type="password" id="my-input" aria-describedby="my-helper-text" ref={passwordConfirmRef} required />
+                                {/* <FormHelperText id="my-helper-text">Confirm password</FormHelperText> */}
                             </FormControl>
                             {/* <Form.Group id="email">
                                 <Form.Label>Email</Form.Label>
@@ -55,12 +55,15 @@ function SignUp(props) {
                                 <Form.Label>Password Confirmation</Form.Label>
                                 <Form.Control type="password" ref={passwordConfirmRef} required></Form.Control>
                             </Form.Group> */}
-                            <Button variant="contained" color="primary" className="w-100" type="submit" onClick={handleSubmit}>Sign Up</Button>
+                            <Button variant="contained" color="primary" className="w-100 my-2" type="submit" onClick={handleSubmit}>Sign Up</Button>
                         </FormGroup>
                     </CardContent>
                 </Card>
+
                 <div className="w-100 text-center mt-2">
-                    Already have an account? Log In
+                    <Link href="#" variant="body2">
+                        Already have an account? Sign in
+                    </Link>
                 </div>
             </div>
         </Container>
